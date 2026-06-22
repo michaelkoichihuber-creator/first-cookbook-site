@@ -63,4 +63,12 @@ export const pantryItems = [
       'Toasted sesame oil is a finishing oil — its rich, nutty aroma is added at the end of cooking, not used for high-heat frying. A few drops transform a simple dish.',
     tip: 'Buy toasted (dark) sesame oil, not light sesame oil. Store away from heat and use within six months of opening.',
   },
+  {
+    id: 'matcha',
+    name: 'Matcha',
+    kanji: '抹茶',
+    description:
+      'Finely ground green tea powder used in Japanese sweets and desserts. Two grades exist: ceremonial (bright colour, clean grassy finish, used for drinking and recipes where matcha is the star) and culinary (for baking and batters where it plays a supporting role). They are not interchangeable in recipes that showcase matcha directly.',
+    tip: 'Use ceremonial-grade matcha when the colour and flavour are central — as in souffle pancakes. Store in an airtight container away from light; matcha oxidises quickly and turns dull once opened.',
+  },
 ]

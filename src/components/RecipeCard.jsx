@@ -9,7 +9,7 @@ export default function RecipeCard({ recipe }) {
       <div className="recipe-card__header">
         <span className="recipe-card__kanji">{kanji}</span>
         <div>
-          <p className="recipe-card__category">{category}</p>
+          {category && <p className="recipe-card__category">{category}</p>}
           <h2 className="recipe-card__title">{title}</h2>
           <div className="recipe-card__meta">
             <span>{time}</span>

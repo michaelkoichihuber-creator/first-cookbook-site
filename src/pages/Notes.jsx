@@ -1,7 +1,6 @@
 import ArticleCard from '../components/ArticleCard'
 import SectionHeader from '../components/SectionHeader'
-import { tips } from '../data/tips'
-import { pantryItems } from '../data/pantry'
+import { tips, pantryItems } from '../data'
 import './Notes.css'
 
 export default function Notes() {
@@ -31,7 +30,7 @@ export default function Notes() {
         <section className="notes__section">
           <h2 className="notes__section-title">Pantry Essentials</h2>
           <p className="notes__section-sub">
-            Eight ingredients that, once stocked, unlock the majority of Japanese home cooking.
+            {pantryItems.length} ingredients that, once stocked, unlock the majority of Japanese home cooking.
           </p>
           <div className="notes__pantry">
             {pantryItems.map(item => (

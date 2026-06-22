@@ -2,7 +2,7 @@ import { useState } from 'react'
 import RecipeCard from '../components/RecipeCard'
 import SectionHeader from '../components/SectionHeader'
 import TagList from '../components/TagList'
-import { recipes } from '../data/recipes'
+import { recipes } from '../data'
 import './Recipes.css'
 
 const ALL = 'All'
@@ -18,7 +18,7 @@ export default function Recipes() {
         <SectionHeader
           eyebrow="レシピ集"
           title="Recipes"
-          subtitle="Nine dishes that teach the fundamentals — broth, rice, egg, fish, and seasoning."
+          subtitle={`${recipes.length} dishes that teach the fundamentals — broth, rice, egg, fish, and seasoning.`}
         />
 
         <div className="recipes__filter" role="group" aria-label="Filter by category">

@@ -100,7 +100,7 @@
 
 /* Seasons */
 .home__seasons {
-  background-color: var(--color-text);
+  background-color: var(--color-surface-dark);
   color: var(--color-bg);
   padding: var(--space-xl) 0;
 }
@@ -238,9 +238,8 @@
 
 /* Learn section */
 .home__learn {
-  padding: var(--space-xl) var(--space-lg);
-  max-width: var(--max-width);
-  margin: 0 auto;
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
 }
 
 .home__learn-inner {

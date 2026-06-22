@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom'
 import SectionHeader from '../components/SectionHeader'
 import RecipeCard from '../components/RecipeCard'
-import { recipes } from '../data/recipes'
-import { seasons } from '../data/seasons'
+import { recipes, seasons } from '../data'
 import './Home.css'
 
 const featured = recipes.slice(0, 3)
@@ -92,8 +91,8 @@ export default function Home() {
             <p className="home__learn-eyebrow">New to Japanese cooking?</p>
             <h2 className="home__learn-title">Start with the Notes</h2>
             <p className="home__learn-body">
-              The Notes page covers the eight pantry essentials and six techniques
-              that underpin almost everything on this site. Read it once before
+              The Notes page covers the pantry essentials and technique notes
+              that form the foundation of this site — read it once before
               you start cooking.
             </p>
           </div>
