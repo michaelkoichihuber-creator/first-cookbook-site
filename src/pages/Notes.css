@@ -1,0 +1,113 @@
+.notes__section {
+  margin-bottom: var(--space-2xl);
+}
+
+.notes__section-title {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.notes__section-sub {
+  font-size: 0.92rem;
+  color: var(--color-muted);
+  margin-bottom: var(--space-lg);
+  line-height: 1.75;
+}
+
+/* Tips grid */
+.notes__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+@media (min-width: 600px) {
+  .notes__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 800px) {
+  .notes__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Pantry list */
+.notes__pantry {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.notes__pantry-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.notes__pantry-item:first-child {
+  border-top: 1px solid var(--color-border);
+}
+
+@media (min-width: 640px) {
+  .notes__pantry-item {
+    grid-template-columns: 180px 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+  }
+}
+
+.notes__pantry-name {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.notes__pantry-kanji {
+  font-size: 1.6rem;
+  color: var(--color-accent);
+  line-height: 1;
+  font-family: var(--font-serif);
+}
+
+.notes__pantry-name strong {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.notes__pantry-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.notes__pantry-desc {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  line-height: 1.8;
+}
+
+.notes__pantry-tip {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  line-height: 1.75;
+}
+
+.notes__pantry-tip-label {
+  display: inline-block;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  margin-right: var(--space-sm);
+  vertical-align: middle;
+}

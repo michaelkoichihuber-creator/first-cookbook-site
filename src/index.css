@@ -22,8 +22,10 @@
   --space-md:  1rem;
   --space-lg:  2rem;
   --space-xl:  4rem;
+  --space-2xl: 6rem;
 
   --radius: 4px;
+  --max-width: 960px;
 }
 
 /* ── Base ── */
@@ -59,4 +61,20 @@ img {
 
 ul {
   list-style: none;
+}
+
+/* ── Utility ── */
+.container {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
 }

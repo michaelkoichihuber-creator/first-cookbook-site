@@ -1,43 +1,16 @@
-.home {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 var(--space-lg);
-}
-
 /* Hero */
 .home__hero {
-  padding: var(--space-xl) 0;
-  max-width: 560px;
-}
-
-.home__eyebrow {
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: var(--space-md);
-}
-
-.home__title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  line-height: 1.1;
-  margin-bottom: var(--space-md);
-}
-
-.home__subtitle {
-  font-size: 1rem;
-  color: var(--color-muted);
-  max-width: 440px;
-  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-lg);
 }
 
 .home__cta {
   display: inline-block;
-  padding: 0.65rem 1.75rem;
+  margin-top: var(--space-md);
+  padding: 0.7rem 1.8rem;
   background-color: var(--color-accent);
   color: #fff;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
   border-radius: var(--radius);
   transition: opacity 0.2s;
@@ -55,6 +28,7 @@
   padding: var(--space-lg) 0;
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
+  margin-top: var(--space-xl);
   margin-bottom: var(--space-xl);
 }
 
@@ -67,17 +41,258 @@
 }
 
 .home__value h3 {
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-bottom: var(--space-sm);
 }
 
 .home__value p {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--color-muted);
+  line-height: 1.75;
 }
 
 @media (min-width: 600px) {
   .home__values {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Featured */
+.home__featured {
+  padding-bottom: var(--space-xl);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-xl);
+}
+
+.home__featured-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+}
+
+.home__featured-title {
+  font-size: 1.2rem;
+}
+
+.home__featured-link {
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s;
+}
+
+.home__featured-link:hover {
+  opacity: 0.75;
+}
+
+.home__featured-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+@media (min-width: 600px) {
+  .home__featured-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Seasons */
+.home__seasons {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  padding: var(--space-xl) 0;
+}
+
+.home__seasons-header {
+  margin-bottom: var(--space-lg);
+}
+
+.home__seasons-eyebrow {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--color-accent);
+  line-height: 1;
+  margin-bottom: var(--space-sm);
+}
+
+.home__seasons-title {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: var(--color-bg);
+  margin-bottom: var(--space-sm);
+}
+
+.home__seasons-sub {
+  font-size: 0.92rem;
+  color: rgba(247, 243, 238, 0.65);
+  max-width: 480px;
+  line-height: 1.75;
+}
+
+.home__seasons-sub em {
+  color: var(--color-bg);
+  font-style: italic;
+}
+
+.home__seasons-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+@media (min-width: 480px) {
+  .home__seasons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 860px) {
+  .home__seasons-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.home__season-card {
+  border: 1px solid rgba(247, 243, 238, 0.15);
+  border-radius: var(--radius);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.home__season-top {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.home__season-kanji {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--color-accent);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.home__season-name {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-bg);
+  margin-bottom: 2px;
+}
+
+.home__season-months {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: rgba(247, 243, 238, 0.5);
+  text-transform: uppercase;
+}
+
+.home__season-desc {
+  font-size: 0.87rem;
+  color: rgba(247, 243, 238, 0.7);
+  line-height: 1.75;
+}
+
+.home__season-ingredients {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  list-style: none;
+  padding: 0;
+}
+
+.home__season-ingredients li {
+  font-size: 0.82rem;
+  color: rgba(247, 243, 238, 0.6);
+  padding-left: var(--space-sm);
+  position: relative;
+}
+
+.home__season-ingredients li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-size: 0.7rem;
+}
+
+.home__season-dish {
+  font-size: 0.82rem;
+  color: rgba(247, 243, 238, 0.55);
+  border-top: 1px solid rgba(247, 243, 238, 0.1);
+  padding-top: var(--space-md);
+  margin-top: auto;
+}
+
+.home__season-dish span {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-right: 4px;
+}
+
+/* Learn section */
+.home__learn {
+  padding: var(--space-xl) var(--space-lg);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.home__learn-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-lg) var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.home__learn-eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-sm);
+}
+
+.home__learn-title {
+  font-size: 1.2rem;
+  margin-bottom: var(--space-sm);
+}
+
+.home__learn-body {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  max-width: 480px;
+  line-height: 1.75;
+}
+
+.home__learn-link {
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: var(--color-accent);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.home__learn-link:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 600px) {
+  .home__learn-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-lg);
   }
 }

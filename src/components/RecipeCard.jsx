@@ -1,13 +1,15 @@
+import TagList from './TagList'
 import './RecipeCard.css'
 
 export default function RecipeCard({ recipe }) {
-  const { title, kanji, time, difficulty, description, tags } = recipe
+  const { title, kanji, category, time, difficulty, description, tags } = recipe
 
   return (
     <article className="recipe-card">
       <div className="recipe-card__header">
         <span className="recipe-card__kanji">{kanji}</span>
         <div>
+          <p className="recipe-card__category">{category}</p>
           <h2 className="recipe-card__title">{title}</h2>
           <div className="recipe-card__meta">
             <span>{time}</span>
@@ -17,11 +19,7 @@ export default function RecipeCard({ recipe }) {
         </div>
       </div>
       <p className="recipe-card__description">{description}</p>
-      <ul className="recipe-card__tags">
-        {tags.map(tag => (
-          <li key={tag} className="recipe-card__tag">{tag}</li>
-        ))}
-      </ul>
+      <TagList tags={tags} />
     </article>
   )
 }

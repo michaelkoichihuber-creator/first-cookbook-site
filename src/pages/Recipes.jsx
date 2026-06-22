@@ -1,51 +1,84 @@
+import { useState } from 'react'
 import RecipeCard from '../components/RecipeCard'
+import SectionHeader from '../components/SectionHeader'
+import TagList from '../components/TagList'
 import { recipes } from '../data/recipes'
 import './Recipes.css'
 
+const ALL = 'All'
+const categories = [ALL, ...new Set(recipes.map(r => r.category))]
+
 export default function Recipes() {
+  const [active, setActive] = useState(ALL)
+  const filtered = active === ALL ? recipes : recipes.filter(r => r.category === active)
+
   return (
     <div className="recipes">
-      <div className="recipes__header">
-        <p className="recipes__eyebrow">レシピ集</p>
-        <h1 className="recipes__title">Recipes</h1>
-        <p className="recipes__subtitle">
-          Three dishes to start with — each one a small lesson in Japanese flavour.
-        </p>
-      </div>
+      <div className="container">
+        <SectionHeader
+          eyebrow="レシピ集"
+          title="Recipes"
+          subtitle="Nine dishes that teach the fundamentals — broth, rice, egg, fish, and seasoning."
+        />
 
-      <div className="recipes__grid">
-        {recipes.map(recipe => (
-          <RecipeCard key={recipe.id} recipe={recipe} />
-        ))}
-      </div>
+        <div className="recipes__filter" role="group" aria-label="Filter by category">
+          {categories.map(cat => (
+            <button
+              key={cat}
+              className={`recipes__filter-btn${active === cat ? ' recipes__filter-btn--active' : ''}`}
+              onClick={() => setActive(cat)}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
 
-      <section className="recipes__detail">
-        {recipes.map(recipe => (
-          <div key={recipe.id} className="recipes__detail-card">
-            <h2 className="recipes__detail-title">
-              <span>{recipe.kanji}</span> {recipe.title}
-            </h2>
-            <div className="recipes__columns">
-              <div>
-                <h3>Ingredients</h3>
-                <ul className="recipes__list">
-                  {recipe.ingredients.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
+        <div className="recipes__grid">
+          {filtered.map(recipe => (
+            <RecipeCard key={recipe.id} recipe={recipe} />
+          ))}
+        </div>
+
+        <section className="recipes__detail">
+          {filtered.map(recipe => (
+            <div key={recipe.id} className="recipes__detail-card" id={recipe.id}>
+              <h2 className="recipes__detail-title">
+                <span className="recipes__detail-kanji">{recipe.kanji}</span>
+                {recipe.title}
+              </h2>
+              <p className="recipes__detail-desc">{recipe.description}</p>
+
+              <TagList tags={recipe.tags} />
+
+              <div className="recipes__columns">
+                <div>
+                  <h3 className="recipes__col-label">Ingredients</h3>
+                  <ul className="recipes__list">
+                    {recipe.ingredients.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="recipes__col-label">Method</h3>
+                  <ol className="recipes__steps">
+                    {recipe.steps.map((step, i) => (
+                      <li key={i}>{step}</li>
+                    ))}
+                  </ol>
+                </div>
               </div>
-              <div>
-                <h3>Method</h3>
-                <ol className="recipes__steps">
-                  {recipe.steps.map((step, i) => (
-                    <li key={i}>{step}</li>
-                  ))}
-                </ol>
-              </div>
+
+              {recipe.note && (
+                <aside className="recipes__note">
+                  <p className="recipes__note-label">Cook's Note</p>
+                  <p>{recipe.note}</p>
+                </aside>
+              )}
             </div>
-          </div>
-        ))}
-      </section>
+          ))}
+        </section>
+      </div>
     </div>
   )
 }

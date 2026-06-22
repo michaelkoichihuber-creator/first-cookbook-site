@@ -1,20 +1,23 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Navbar from './components/Navbar'
+import PageLayout from './layouts/PageLayout'
 import Home from './pages/Home'
 import Recipes from './pages/Recipes'
+import Notes from './pages/Notes'
 import About from './pages/About'
+import NotFound from './pages/NotFound'
 
 export default function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      <main>
+      <PageLayout>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/"        element={<Home />} />
           <Route path="/recipes" element={<Recipes />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/notes"   element={<Notes />} />
+          <Route path="/about"   element={<About />} />
+          <Route path="*"        element={<NotFound />} />
         </Routes>
-      </main>
+      </PageLayout>
     </BrowserRouter>
   )
 }

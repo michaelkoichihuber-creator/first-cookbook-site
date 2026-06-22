@@ -1,0 +1,31 @@
+.section-header {
+  padding: var(--space-xl) 0 var(--space-lg);
+}
+
+.section-header__eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-md);
+  font-family: var(--font-sans);
+  font-weight: 400;
+}
+
+.section-header__title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.1;
+  margin-bottom: var(--space-sm);
+}
+
+.section-header--xl .section-header__title {
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  margin-bottom: var(--space-md);
+}
+
+.section-header__subtitle {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+  max-width: 520px;
+  line-height: 1.75;
+}
