@@ -40,7 +40,7 @@
   padding-bottom: var(--space-xl);
 }
 
-.home__value h3 {
+.home__value h2 {
   font-size: 1rem;
   margin-bottom: var(--space-sm);
 }

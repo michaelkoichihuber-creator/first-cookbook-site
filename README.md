@@ -91,6 +91,20 @@ The `vercel.json` rewrite rule sends all unmatched paths to `index.html`, which 
 
 ---
 
+## SEO
+
+Basic SEO is implemented without any external dependency.
+
+**Per-page titles and descriptions** — a `useMeta` hook (`src/utils/useMeta.js`) uses `useEffect` to write `document.title` and update the `<meta name="description">` tag on every route change. Each page supplies its own title string and description.
+
+**Open Graph and Twitter Card** — static tags in `index.html` cover the site-level share preview (og:type, og:site\_name, og:title, og:description, twitter:card). They use the homepage copy as a sensible default for any page that gets shared before its own OG tags can be read.
+
+**Semantic HTML** — every page uses proper landmark elements: `<header>` and `<nav>` in Navbar, `<main>` in PageLayout, `<section>` for thematic groupings, `<article>` for self-contained recipe cards in the detail view, and `<footer>` in Footer. Heading hierarchy is h1 (via SectionHeader) → h2 (section titles) → h3 (column labels within a recipe), with no skipped levels.
+
+**ARIA** — decorative kanji characters have `aria-hidden="true"`. The mobile nav toggle has `aria-label` and `aria-expanded`. The category filter group has `role="group"` with `aria-label`.
+
+---
+
 ## Deploying to Vercel
 
 1. Push the repo to GitHub.

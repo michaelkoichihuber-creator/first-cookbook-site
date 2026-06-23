@@ -2,11 +2,17 @@ import { Link } from 'react-router-dom'
 import SectionHeader from '../components/SectionHeader'
 import RecipeCard from '../components/RecipeCard'
 import { recipes, seasons } from '../data'
+import { useMeta } from '../utils/useMeta'
 import './Home.css'
 
 const featured = recipes.slice(0, 3)
 
 export default function Home() {
+  useMeta({
+    title: 'Washoku — Simple Japanese Home Cooking',
+    description: 'A small collection of Japanese home cooking recipes rooted in tradition — accessible for any kitchen, anywhere in the world.',
+  })
+
   return (
     <div className="home">
       <section className="home__hero container">
@@ -25,15 +31,15 @@ export default function Home() {
 
       <section className="home__values container">
         <div className="home__value">
-          <h3>Seasonal</h3>
+          <h2>Seasonal</h2>
           <p>Japanese cooking follows the rhythm of the seasons, choosing ingredients at their peak.</p>
         </div>
         <div className="home__value">
-          <h3>Simple</h3>
+          <h2>Simple</h2>
           <p>Restraint is a virtue. These recipes need few ingredients and reward patience over technique.</p>
         </div>
         <div className="home__value">
-          <h3>Balanced</h3>
+          <h2>Balanced</h2>
           <p>Every dish balances the five tastes: sweet, salty, sour, bitter, and umami.</p>
         </div>
       </section>

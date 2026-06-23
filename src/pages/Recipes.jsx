@@ -3,12 +3,18 @@ import RecipeCard from '../components/RecipeCard'
 import SectionHeader from '../components/SectionHeader'
 import TagList from '../components/TagList'
 import { recipes } from '../data'
+import { useMeta } from '../utils/useMeta'
 import './Recipes.css'
 
 const ALL = 'All'
 const categories = [ALL, ...new Set(recipes.map(r => r.category))]
 
 export default function Recipes() {
+  useMeta({
+    title: 'Recipes — Washoku',
+    description: "Step-by-step Japanese recipes covering miso soup, ramen, gyoza, karaage, and more. Beginner-friendly with cook's notes for every dish.",
+  })
+
   const [active, setActive] = useState(ALL)
   const filtered = active === ALL ? recipes : recipes.filter(r => r.category === active)
 
@@ -41,7 +47,7 @@ export default function Recipes() {
 
         <section className="recipes__detail">
           {filtered.map(recipe => (
-            <div key={recipe.id} className="recipes__detail-card" id={recipe.id}>
+            <article key={recipe.id} className="recipes__detail-card" id={recipe.id}>
               <h2 className="recipes__detail-title">
                 <span className="recipes__detail-kanji">{recipe.kanji}</span>
                 {recipe.title}
@@ -75,7 +81,7 @@ export default function Recipes() {
                   <p>{recipe.note}</p>
                 </aside>
               )}
-            </div>
+            </article>
           ))}
         </section>
       </div>

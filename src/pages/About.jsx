@@ -1,8 +1,14 @@
 import { Link } from 'react-router-dom'
 import SectionHeader from '../components/SectionHeader'
+import { useMeta } from '../utils/useMeta'
 import './About.css'
 
 export default function About() {
+  useMeta({
+    title: 'About — Washoku',
+    description: 'The philosophy behind Washoku — Japanese home cooking made accessible, with attention to ingredients, season, and simplicity.',
+  })
+
   return (
     <div className="about">
       <div className="container">

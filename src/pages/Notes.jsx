@@ -1,9 +1,15 @@
 import ArticleCard from '../components/ArticleCard'
 import SectionHeader from '../components/SectionHeader'
 import { tips, pantryItems } from '../data'
+import { useMeta } from '../utils/useMeta'
 import './Notes.css'
 
 export default function Notes() {
+  useMeta({
+    title: 'Kitchen Notes — Washoku',
+    description: 'Japanese cooking techniques, pantry essentials, and philosophy notes — the foundation for everything in this cookbook.',
+  })
+
   return (
     <div className="notes">
       <div className="container">
